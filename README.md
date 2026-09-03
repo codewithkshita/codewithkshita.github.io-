@@ -2,7 +2,7 @@
 
 > Electronics & Communication Engineering undergraduate building at the intersection of Embedded Systems, Software Development and AI/ML.
 
-🌐 **Portfolio:** [View My Portfolio](YOUR_PORTFOLIO_LINK)
+🌐 **Portfolio:** [View My Portfolio](https://codewithkshita.github.io/codewithkshita.github.io-/)
 
 📧 **Email:** rawatakshita0987@gmail.com  
 💼 **LinkedIn:** [Akshita Rawat](https://www.linkedin.com/in/akshita-rawat-b64359284/)  
