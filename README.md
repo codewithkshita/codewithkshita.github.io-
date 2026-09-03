@@ -5,7 +5,7 @@
 🌐 **Portfolio:** [View My Portfolio](YOUR_PORTFOLIO_LINK)
 
 📧 **Email:** rawatakshita0987@gmail.com  
-💼 **LinkedIn:** [Akshita Rawat](YOUR_LINKEDIN_LINK)  
+💼 **LinkedIn:** [Akshita Rawat](https://www.linkedin.com/in/akshita-rawat-b64359284/)  
 💻 **GitHub:** [codewithkshita](https://github.com/codewithkshita)
 
 ---
@@ -186,7 +186,7 @@ AI/ML roles and interesting technology projects.
 
 💻 **GitHub:** https://github.com/codewithkshita
 
-💼 **LinkedIn:** YOUR_LINKEDIN_LINK
+💼 **LinkedIn:** https://www.linkedin.com/in/akshita-rawat-b64359284/
 
 ---
 
