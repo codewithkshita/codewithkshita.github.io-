@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akshita Rawat — ECE Engineer · Software & AI</title>
+<meta name="description" content="Portfolio of Akshita Rawat — Electronics & Communication engineer building across embedded systems, full-stack software and applied AI/ML.">
+<meta name="theme-color" content="#10151A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#10151A;
+    --surface:#161C22;
+    --surface-2:#1C242B;
+    --line:#2B343C;
+    --text:#EDEFEA;
+    --muted:#90A0A0;
+    --copper:#C97B4E;
+    --copper-dim:#8A5636;
+    --teal:#5FA9A0;
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--copper);color:#10151A;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Unbounded',sans-serif;margin:0;line-height:1.15;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(16,21,26,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 28px;max-width:var(--maxw);margin:0 auto;
+  }
+  .logo{font-family:'Unbounded',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.02em;}
+  .logo .dot{color:var(--copper);}
+  .navlinks{display:flex;gap:28px;list-style:none;margin:0;padding:0;}
+  .navlinks a{
+    text-decoration:none;color:var(--muted);font-size:14.5px;
+    transition:color .2s ease;
+  }
+  .navlinks a:hover{color:var(--text);}
+  .navtoggle{display:none;background:none;border:1px solid var(--line);color:var(--text);
+    width:38px;height:38px;border-radius:4px;font-size:18px;cursor:pointer;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:88px 0 96px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;
+  }
+  .eyebrow{
+    display:flex;align-items:center;gap:10px;
+    color:var(--copper);font-size:13.5px;font-family:'IBM Plex Mono',monospace;
+    margin-bottom:22px;
+  }
+  .eyebrow .rule{width:28px;height:1px;background:var(--copper);display:inline-block;}
+  h1.name{
+    font-size:clamp(40px,6vw,64px);
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin-bottom:18px;
+  }
+  .tagline{
+    font-size:clamp(19px,2.2vw,23px);
+    color:var(--text);
+    max-width:520px;
+    margin-bottom:16px;
+    font-weight:500;
+  }
+  .tagline em{color:var(--copper);font-style:normal;}
+  .subtext{
+    color:var(--muted);max-width:480px;font-size:15.5px;margin-bottom:34px;
+  }
+  .badges{display:flex;flex-wrap:wrap;gap:10px 18px;margin-bottom:38px;align-items:center;}
+  .badge{
+    display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--text);
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .badge::before{content:'';width:6px;height:6px;background:var(--teal);display:inline-block;transform:rotate(45deg);}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{
+    padding:13px 22px;border-radius:3px;text-decoration:none;font-size:14.5px;
+    font-weight:500;display:inline-flex;align-items:center;gap:8px;
+    transition:transform .15s ease, background .15s ease, border-color .15s ease;
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--copper);color:#12100D;}
+  .btn-primary:hover{transform:translateY(-1px);background:#d98a5c;}
+  .btn-outline{border-color:var(--line);color:var(--text);}
+  .btn-outline:hover{border-color:var(--copper);transform:translateY(-1px);}
+
+  .hero-visual{position:relative;}
+  .hero-visual svg{width:100%;height:auto;display:block;}
+  .trace-path{
+    fill:none;stroke:var(--copper);stroke-width:2;
+    stroke-dasharray:900;stroke-dashoffset:900;
+    animation:draw 2.2s ease forwards .3s;
+  }
+  .trace-path.teal{stroke:var(--teal);stroke-dasharray:700;stroke-dashoffset:700;animation-duration:2.4s;animation-delay:.6s;}
+  .pad{fill:var(--copper);opacity:0;animation:pop .4s ease forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @keyframes pop{to{opacity:1;}}
+  @media (prefers-reduced-motion:reduce){
+    .trace-path{animation:none;stroke-dashoffset:0;}
+    .pad{animation:none;opacity:1;}
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:88px 0;border-bottom:1px solid var(--line);}
+  .section-head{
+    display:grid;grid-template-columns:220px 1fr;gap:32px;margin-bottom:52px;
+  }
+  .section-tag{
+    display:flex;align-items:flex-start;gap:10px;color:var(--muted);
+    font-family:'IBM Plex Mono',monospace;font-size:13px;
+  }
+  .section-tag .pad-mark{width:8px;height:8px;background:var(--copper);flex:none;margin-top:5px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,38px);max-width:600px;}
+  .section-sub{color:var(--muted);max-width:520px;margin-top:14px;font-size:15px;}
+
+  /* ---------- Projects ---------- */
+  .projects{display:flex;flex-direction:column;gap:2px;}
+  .project{
+    position:relative;
+    background:var(--surface);
+    border:1px solid var(--line);
+    padding:34px 34px 30px;
+    display:grid;grid-template-columns:1fr 1.4fr;gap:36px;
+  }
+  .project + .project{margin-top:18px;}
+  .project::before{
+    content:'';position:absolute;top:-1px;left:-1px;width:12px;height:12px;
+    background:var(--copper);
+  }
+  .project-cat{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--teal);margin-bottom:10px;}
+  .project h3{font-size:23px;margin-bottom:12px;}
+  .project-desc{color:var(--muted);font-size:14.5px;margin-bottom:0;}
+  .project-link{
+    display:inline-flex;align-items:center;gap:6px;margin-top:16px;
+    font-size:13.5px;color:var(--copper);text-decoration:none;font-family:'IBM Plex Mono',monospace;
+  }
+  .project-link:hover{text-decoration:underline;}
+  .project ul{margin:0 0 18px;padding-left:18px;color:var(--text);font-size:14.5px;}
+  .project ul li{margin-bottom:8px;}
+  .stack{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);
+    border:1px solid var(--line);padding:5px 10px;border-radius:2px;
+  }
+  @media (max-width:760px){
+    .project{grid-template-columns:1fr;}
+  }
+
+  /* ---------- About ---------- */
+  .about-body{display:grid;grid-template-columns:1fr;gap:28px;}
+  .about-body p{max-width:640px;color:var(--text);font-size:16px;margin:0 0 16px;}
+  .about-body p.muted{color:var(--muted);}
+  .stats{display:flex;flex-wrap:wrap;gap:0;margin-top:38px;border-top:1px solid var(--line);}
+  .stat{flex:1;min-width:180px;padding:22px 24px 0;border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Unbounded',sans-serif;font-size:26px;color:var(--copper);}
+  .stat .lbl{color:var(--muted);font-size:13.5px;margin-top:6px;}
+
+  /* ---------- Achievements ---------- */
+  .ach-list{display:flex;flex-direction:column;}
+  .ach{
+    display:grid;grid-template-columns:130px 1fr;gap:24px;
+    padding:26px 0;border-top:1px solid var(--line);
+  }
+  .ach:last-child{border-bottom:1px solid var(--line);}
+  .ach .when{color:var(--copper);font-family:'IBM Plex Mono',monospace;font-size:13px;padding-top:4px;}
+  .ach h3{font-size:19px;margin-bottom:6px;}
+  .ach p{color:var(--muted);font-size:14.5px;margin:0;}
+  @media (max-width:600px){.ach{grid-template-columns:1fr;gap:6px;}}
+
+  /* ---------- Skills ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 40px;}
+  .skill-group h3{font-size:15px;font-family:'IBM Plex Mono',monospace;color:var(--teal);font-weight:400;margin-bottom:12px;}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
+  @media (max-width:600px){.skills-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Experience ---------- */
+  .timeline{border-left:1px solid var(--line);padding-left:30px;position:relative;}
+  .tl-item{position:relative;margin-bottom:40px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-item::before{
+    content:'';position:absolute;left:-35px;top:5px;width:9px;height:9px;
+    background:var(--bg);border:2px solid var(--copper);border-radius:50%;
+  }
+  .tl-item .when{font-family:'IBM Plex Mono',monospace;color:var(--muted);font-size:13px;margin-bottom:6px;}
+  .tl-item h3{font-size:19px;margin-bottom:8px;}
+  .tl-item p{color:var(--muted);font-size:14.5px;margin:0;max-width:560px;}
+
+  /* ---------- Contact ---------- */
+  .contact{border-bottom:none;}
+  .contact-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;}
+  .contact h2{font-size:clamp(30px,4.5vw,46px);max-width:520px;}
+  .contact h2 em{color:var(--copper);font-style:normal;}
+  .contact-links{display:flex;flex-direction:column;gap:16px;align-items:flex-start;}
+  .contact-link{
+    display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);
+    font-size:16px;padding-bottom:6px;border-bottom:1px solid var(--line);width:100%;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .contact-link:hover{border-color:var(--copper);color:var(--copper);}
+  .contact-link .arrow{margin-left:auto;color:var(--muted);}
+  @media (max-width:760px){.contact-inner{grid-template-columns:1fr;}}
+
+  footer{padding:28px 0;}
+  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:13.5px;}
+  .footer-row a{color:var(--muted);text-decoration:none;margin-left:18px;}
+  .footer-row a:hover{color:var(--copper);}
+
+  @media (max-width:760px){
+    .navlinks{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:280px;}
+    .section-head{grid-template-columns:1fr;gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">AR<span class="dot">.</span></div>
+    <ul class="navlinks">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="rule"></span>Available for internships & software roles</div>
+      <h1 class="name">Akshita Rawat</h1>
+      <p class="tagline">Building intelligent solutions at the <em>intersection</em> of Electronics, Software & AI.</p>
+      <p class="subtext">ECE undergraduate who moves comfortably between a breadboard and a codebase — designing embedded hardware, full-stack applications, and the machine learning that ties them together.</p>
+      <div class="badges">
+        <span class="badge">Embedded systems</span>
+        <span class="badge">AI / ML</span>
+        <span class="badge">Full-stack</span>
+        <span class="badge">Signal processing</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#work">Explore my work</a>
+        <a class="btn btn-outline" href="https://drive.google.com/file/d/1ipTVck-vt62NH7s-fiDZxKcZospB9taN/view?usp=drive_link" target="_blank" rel="noopener">Download resume</a>
+        <a class="btn btn-outline" href="mailto:rawatakshita0987@gmail.com">Let's talk</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg">
+        <path class="trace-path" d="M20 60 H140 L170 90 V150 H260 L290 180 V240 H380" />
+        <path class="trace-path teal" d="M20 300 H90 L120 270 H220 V210 L250 180 H340 L370 150" />
+        <circle class="pad" cx="20" cy="60" r="5" style="animation-delay:2.4s"/>
+        <circle class="pad" cx="380" cy="240" r="5" style="animation-delay:2.5s"/>
+        <circle class="pad" cx="20" cy="300" r="5" style="animation-delay:2.9s" fill="#5FA9A0"/>
+        <circle class="pad" cx="370" cy="150" r="5" style="animation-delay:3s" fill="#5FA9A0"/>
+        <rect class="pad" x="130" y="140" width="12" height="12" style="animation-delay:2.6s"/>
+        <rect class="pad" x="250" y="170" width="12" height="12" style="animation-delay:2.7s"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag"><span class="pad-mark"></span>Selected work</div>
+      <div>
+        <h2>Projects built across hardware, software and applied ML.</h2>
+        <p class="section-sub">A mix of embedded systems, full-stack builds and machine learning pipelines — each grounded in a real constraint: safety, signal noise, or food waste.</p>
+      </div>
+    </div>
+
+    <div class="projects">
+      <div class="project">
+        <div>
+          <div class="project-cat">Embedded · IoT</div>
+          <h3>RFID-Based Student Security & Monitoring System</h3>
+          <p class="project-desc">A safety system for automated student attendance and school-bus tracking, built to identify students and alert guardians in real time.</p>
+          <a class="project-link" href="https://github.com/codewithkshita" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <div>
+          <ul>
+            <li>Combined Arduino Mega/UNO with UHF RFID, GPS and GSM to identify students and track the school bus's live location</li>
+            <li>Wrote embedded C/C++ for RFID validation, attendance logging, and flagging unauthorized access</li>
+            <li>Triggered automated SMS alerts over UART/SPI-connected GSM hardware</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">Arduino</span><span class="chip">Embedded C/C++</span><span class="chip">RFID</span>
+            <span class="chip">GPS</span><span class="chip">GSM</span><span class="chip">UART</span><span class="chip">SPI</span><span class="chip">IoT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div>
+          <div class="project-cat">AI / ML · Healthcare</div>
+          <h3>LVH Detection from ECG Signals</h3>
+          <p class="project-desc">A Python-based ML pipeline that automatically flags left ventricular hypertrophy from 12-lead ECG recordings in the PTB-XL dataset.</p>
+          <a class="project-link" href="https://github.com/codewithkshita" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <div>
+          <ul>
+            <li>Cleaned raw ECG signals and extracted morphological features — R-peak/wave detection, R/P/Q/S/T amplitudes, R/S ratio and QRS duration</li>
+            <li>Ran feature selection, then trained and compared Logistic Regression, Random Forest and SVM classifiers</li>
+            <li>Reached a cross-validated AUC of 0.973 with the Random Forest model</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">Python</span><span class="chip">Scikit-learn</span><span class="chip">NeuroKit2</span>
+            <span class="chip">Random Forest</span><span class="chip">SVM</span><span class="chip">Logistic Regression</span><span class="chip">PTB-XL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div>
+          <div class="project-cat">Product concept</div>
+          <h3>Cooknetic — Smart Kitchen & Recipe Recommendation</h3>
+          <p class="project-desc">A mood-based smart kitchen concept that turns whatever's left in the fridge into a real recipe, guided by a live video call with a chef.</p>
+          <a class="project-link" href="https://github.com/codewithkshita" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <div>
+          <ul>
+            <li>Designed a video-call flow connecting users to a chef for real-time recipe suggestions</li>
+            <li>Built ingredient-tracking logic that recommends recipes and reuse ideas from what's already available, cutting food waste</li>
+            <li>Named a Top 15 Finalist at HackIndia '25 for this concept</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag"><span class="pad-mark"></span>About</div>
+      <div>
+        <h2>Engineering mindset. Cross-disciplinary build.</h2>
+      </div>
+    </div>
+    <div class="about-body">
+      <p>I'm an Electronics & Communication Engineering undergraduate at Banasthali Vidyapith, drawn to software development, AI/ML and IoT — and to building solutions that hold up outside a lab.</p>
+      <p class="muted">My ECE background means I think about systems end to end: a sensor's noise floor, a signal's shape, the API that serves the result, and the interface someone actually uses. That range shows up across my projects — from RFID hardware wired to live GPS tracking, to ECG feature engineering for a healthcare ML model.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">2027</div><div class="lbl">B.Tech graduation</div></div>
+      <div class="stat"><div class="num">1st</div><div class="lbl">TriWizardathon win</div></div>
+      <div class="stat"><div class="num">Top 15</div><div class="lbl">HackIndia '25 finalist</div></div>
+      <div class="stat"><div class="num">AAMIH</div><div class="lbl">Healthcare AI internship</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag"><span class="pad-mark"></span>Achievements</div>
+      <div>
+        <h2>Recognition from building under pressure.</h2>
+        <p class="section-sub">Hackathons, internships and competitions that pushed the pace and the scope of what I could ship.</p>
+      </div>
+    </div>
+    <div class="ach-list">
+      <div class="ach">
+        <div class="when">2026</div>
+        <div>
+          <h3>Winner — TriWizardathon 1.0</h3>
+          <p>Secured 1st place in this Microsoft-organized national hackathon.</p>
+        </div>
+      </div>
+      <div class="ach">
+        <div class="when">2025</div>
+        <div>
+          <h3>Top 15 Finalist — HackIndia '25</h3>
+          <p>Selected among the top 1% of 1000+ teams nationwide for Cooknetic AI.</p>
+        </div>
+      </div>
+      <div class="ach">
+        <div class="when">2026</div>
+        <div>
+          <h3>AI/ML Healthcare Intern — AAMIH</h3>
+          <p>Completed a hands-on internship focused on ECG-based LVH detection using Python and machine learning.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag"><span class="pad-mark"></span>Toolkit</div>
+      <div>
+        <h2>What I build with.</h2>
+      </div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Programming</h3>
+        <div class="skill-tags"><span class="chip">C</span><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>CS fundamentals</h3>
+        <div class="skill-tags"><span class="chip">Data Structures & Algorithms</span><span class="chip">OOP</span><span class="chip">Operating Systems</span><span class="chip">Complexity Analysis</span><span class="chip">Machine Learning</span><span class="chip">TensorFlow</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Web & software</h3>
+        <div class="skill-tags"><span class="chip">Full-stack development</span><span class="chip">Responsive UI design</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Embedded & hardware</h3>
+        <div class="skill-tags"><span class="chip">Arduino</span><span class="chip">ESP32</span><span class="chip">GPS/GSM modules</span><span class="chip">Sensor-based systems</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Tools & platforms</h3>
+        <div class="skill-tags"><span class="chip">Git / GitHub</span><span class="chip">VS Code</span><span class="chip">Jupyter Notebook</span><span class="chip">Circuit Design</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag"><span class="pad-mark"></span>Experience</div>
+      <div>
+        <h2>Experience & education.</h2>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="when">May — Jul 2026</div>
+        <h3>AI/ML Healthcare Intern · AAMIH</h3>
+        <p>Worked on AI/ML-based ECG signal analysis for automated LVH detection — building and evaluating Python models, then applying feature selection and validation to assess classification performance.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">2023 — 2027</div>
+        <h3>B.Tech, Electronics & Communication Engineering · Banasthali Vidyapith</h3>
+        <p>Rajasthan, India — bridging core electronics with software development, computer science fundamentals and applied machine learning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-inner">
+    <h2>Have something worth <em>building?</em> Let's talk.</h2>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:rawatakshita0987@gmail.com">rawatakshita0987@gmail.com <span class="arrow">↗</span></a>
+      <a class="contact-link" href="https://github.com/codewithkshita" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+      <a class="contact-link" href="https://www.linkedin.com/in/akshita-rawat-b64359284/" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>© 2026 Akshita Rawat</div>
+    <div>
+      <a href="https://github.com/codewithkshita" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/akshita-rawat-b64359284/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
